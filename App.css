@@ -1,0 +1,144 @@
+.settings-page {
+    padding: 0 20px;
+    margin: 20px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center;  */
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  border-radius: 30px;
+  padding: 5px;
+  margin-bottom: 20px;  
+}
+
+.search-bar input[type="text"] {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 5px;
+  margin-right: 5px;
+  background-color: #f0f0f0;
+}
+
+.settings-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-links a {
+  text-decoration: none;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.settings-links a:hover {
+  background-color: #f0f0f0;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin: 10px;
+}
+
+.link img{
+  width: 38px;
+  height: 38px; 
+  margin-right: 10px; 
+  margin-left: 8px;
+}
+
+.line {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 10px 0; 
+}
+
+.setting-link {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.setting-link img {
+  width: 25px;
+  height: 25px; 
+  border: 1px solid #3498db; 
+  border-radius: 50%; 
+  margin-right: 10px; 
+  padding: 2px;
+}
+
+/* about */
+.about-phone-container {
+  padding: 0 20px;
+  margin: 20px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+.about-phone-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.arrow-icon {
+  font-size: 24px;
+}
+
+.about-phone-section {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.about-phone-icon img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.about-phone-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-phone-text h2 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.about-phone-text p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.about-phone-section:last-child {
+  border-bottom: none; /* Remove border from the last section */
+}
+
+
+
+
