@@ -1,23 +1,92 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+import IconImage from "./g.png";
+import IconImage1 from "./c.png";
+import IconImage2 from "./c.png";
 
 const AboutPhone = () => {
   return (
     <div className="about-phone-container">
       <div className="about-phone-header">
         <div className="arrow-icon">&#8592;</div>
-        <h1>About Phone</h1>
+        <h1>About Device</h1>
       </div>
 
-      <div className="about-phone-section">
+      <NavLink className="about-phone-section">
         <div className="about-phone-icon">
-          <img src="icon1.png" alt="Icon 1" />
+          <img src={IconImage} alt="Icon 1" />
         </div>
         <div className="about-phone-text">
-          <h2>Feature 1</h2>
-          <p>Description of Feature 1 goes here.</p>
+          <p id="about1">Up to date</p>
+          <p id="about2">Official Version</p>
         </div>
+      </NavLink>
+
+      <div className="about-phone-container2">
+        <NavLink to="/Device" className="about-phone-content">
+          <div className="setting-link">
+            <img src={IconImage1} alt="Icon 1" />
+          </div>
+          <div className="about-phone-text">
+            <p>Device name</p>
+            <p>OnePlus 7T</p>
+          </div>
+        </NavLink>
+
+        <NavLink to="/Storage" className="about-phone-content">
+          <div className="setting-link">
+            <img src={IconImage2} alt="Icon 1" />
+          </div>
+          <div className="about-phone-text">
+            <p>Storage</p>
+            <p>147GB used/256GB</p>
+          </div>
+        </NavLink>
+
       </div>
 
+      <div className="settings-links">
+
+      <NavLink to="/airplane" className="setting-link" id="setting-id">
+          Processor
+          <div>Qualcomm</div>
+        </NavLink>
+
+
+        <NavLink to="/airplane" className="setting-link" id="setting-id">
+          Model
+          <div>HD1901</div>
+        </NavLink>
+
+        <hr className="line" />
+
+        <NavLink to="/" className="setting-link" id="setting-id">
+          RAM <div>8.00GB </div>
+        </NavLink>
+
+        <NavLink to="/" className="setting-link" id="setting-id">
+          Android Version <div>12</div>
+        </NavLink>
+
+        <NavLink to="/" className="setting-link">
+          Version
+        </NavLink>
+
+        <NavLink to="/" className="setting-link">
+          Legal information
+        </NavLink>
+
+        <NavLink to="/" className="setting-link">
+          Status
+        </NavLink>
+
+        <hr className="line" />
+         
+        <NavLink to="/" className="setting-link">
+          Award <p>OxygenOs Contributors</p>
+        </NavLink>
+
+        </div>
     </div>
   );
 }

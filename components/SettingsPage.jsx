@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import airplaneIcon from "./a.png";
-import displayIcon from "./b.png";
-import soundIcon from "./c.png";
-import aboutIcon from "./d.png";
-import connectionsIcon from "./e.png";
+import airplaneIcon from "./Settings/images/a.png";
+import displayIcon from "./Settings/images/b.png";
+import soundIcon from "./Settings/images/c.png";
+import aboutIcon from "./Settings/images/d.png";
+import connectionsIcon from "./Settings/images/e.png";
 import UrlDisplay from "./Settings/UrlDisplay/UrlDisplay";
 
 function SettingsPage() {
@@ -20,7 +20,7 @@ function SettingsPage() {
       <div className="settings-links">
         
         <div className="link">
-          <img src={require("./f.png")} alt="Your Alt Text" />
+          <img src={require("./Settings/images/f.png")} alt="Your Alt Text" />
           <UrlDisplay name={name} url="https://www.oneplus.in/redcableclub" />
         </div>
 
