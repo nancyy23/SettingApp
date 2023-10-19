@@ -1,13 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import IconImage from "./g.png";
-import IconImage1 from "./c.png";
-import IconImage2 from "./c.png";
+import IconImage from "../images/g.png";
+import IconImage1 from "../images/c.png";
+import IconImage2 from "../images/d.png";
 
 const AboutPhone = () => {
   return (
-    <div className="about-phone-container">
-      <div className="about-phone-header">
+    <div className="container">
+      <div className="header">
         <div className="arrow-icon">&#8592;</div>
         <h1>About Device</h1>
       </div>
@@ -47,13 +47,13 @@ const AboutPhone = () => {
 
       <div className="settings-links">
 
-      <NavLink to="/airplane" className="setting-link" id="setting-id">
+      <NavLink to="/about" className="setting-link" id="setting-id">
           Processor
           <div>Qualcomm</div>
         </NavLink>
 
 
-        <NavLink to="/airplane" className="setting-link" id="setting-id">
+        <NavLink to="/about" className="setting-link" id="setting-id">
           Model
           <div>HD1901</div>
         </NavLink>
@@ -68,7 +68,7 @@ const AboutPhone = () => {
           Android Version <div>12</div>
         </NavLink>
 
-        <NavLink to="/" className="setting-link">
+        <NavLink to="/version" className="setting-link">
           Version
         </NavLink>
 

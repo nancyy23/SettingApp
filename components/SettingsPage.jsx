@@ -51,7 +51,7 @@ function SettingsPage() {
           Connections
         </NavLink>
 
-        <NavLink to="/connections" className="setting-link">
+        <NavLink to="/mobilenetwork" className="setting-link">
           <img src={connectionsIcon} alt="Connections" />
           Mobile Network
         </NavLink>

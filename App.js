@@ -17,7 +17,6 @@ function App() {
   return (
       <Routes>
         <Route path = '/' Component={SettingsPage}/>
-
         <Route path = '/about' Component={AboutPhone}/>
         <Route path = '/Device' Component={Device}/>
         <Route path = '/Storage' Component={Storage}/>
