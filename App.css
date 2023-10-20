@@ -186,12 +186,10 @@ p {
 }
 
 .left-side {
-  flex: 1;
   text-align: left;
 }
 
 .right-side {
-  flex: 1;
   text-align: right;
 }
 
@@ -254,7 +252,7 @@ input:checked + .slider:before {
 /* Device */
 
 .device-container {
-  padding: 0 20px;
+    padding: 0 20px;
     margin: 20px auto;
     font-family: Arial, sans-serif;
     display: flex;
@@ -402,16 +400,6 @@ input:checked + .slider:before {
   width: 400px;
 }
 
-.left-side {
-  flex: 1;
-  text-align: left;
-}
-
-.right-side {
-  flex: 1;
-  text-align: right;
-}
-
 .toggle-text {
   font-size: 16px;
 }
@@ -428,4 +416,43 @@ input:checked + .slider:before {
   margin: 20px;
   margin-bottom: 25px;
   color: #000;
+}
+
+.nfc-container{
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  display: flex;
+  width: 400px;
+}
+
+.nfc-text1{
+  font-size: 11px;
+  color: grey;
+}
+
+/* vpn.css */
+.vpn-container {
+  text-align: center;
+}
+
+.vpn-text {
+  color: grey;
+}
+
+.vpn-image {
+  width: 150px; 
+  height: 150px; 
+}
+
+.link-no-underline {
+  text-decoration: none;
+}
+/* Dns */
+.dns-text{
+  font-size: 11px;
+  color: grey;
+  margin:10px
 }

@@ -38,23 +38,23 @@ const Connections = () => {
       <ToggleComponent label="Bluetooth tethering" />
       <hr className="line" />
       <div className="links">
-      <NavLink to="/" className="link">
+      <NavLink to="/Vpn" className="link">
           VPN
       </NavLink>
-      <NavLink to="/" className="link">
+      <NavLink to="/Nfc" className="link">
           NFC
       </NavLink>
-      <NavLink to="/" className="link">
+      <NavLink to="/Dns" className="link">
           Private DNS
       </NavLink>
-      <NavLink to="/" className="link">
+      <NavLink to="/Android" className="link">
           Android Auto
       </NavLink>
       </div>
 
       <hr className="line" />
 
-      <NavLink to="/" className="link">
+      <NavLink to="/Screencast" className="link">
           Screencast
       </NavLink>
 
