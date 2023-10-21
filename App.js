@@ -13,6 +13,7 @@ import Nfc from './components/Settings/Connection/Nfc';
 import Screencast from './components/Settings/Connection/Screencast';
 import Vpn from './components/Settings/Connection/Vpn';
 import DisplayBrightness from './components/Settings/Display/DisplayBrightness';
+import  Auto from './components/Settings/Display/DisplayBrightness';
 import SoundVibration from './components/Settings/Sound/SoundVibration';
 import UrlDisplay from './components/Settings/UrlDisplay/UrlDisplay';
 
@@ -31,6 +32,7 @@ function App() {
         <Route path = '/Dns' Component={Dns}/>
         <Route path = '/Screencast' Component={Screencast}/>
         <Route path = '/display' Component={DisplayBrightness}/>
+        <Route path = '/auto' Component={Auto}/>
         <Route path = '/sound' Component={SoundVibration}/>
         <Route path = '/UrlDisplay' Component={UrlDisplay}/>
       </Routes>

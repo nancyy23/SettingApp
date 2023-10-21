@@ -1,14 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import IconImage from "../images/g.png";
-import IconImage1 from "../images/c.png";
-import IconImage2 from "../images/d.png";
+import IconImage1 from "../images/d.png";
+import IconImage2 from "../images/i.png";
 
 const AboutPhone = () => {
   return (
     <div className="container">
       <div className="header">
-        <div className="arrow-icon">&#8592;</div>
+      <NavLink to="../" className="arrow-icon link-no-underline">&#8592;</NavLink>
         <h1>About Device</h1>
       </div>
 
@@ -17,7 +17,7 @@ const AboutPhone = () => {
           <img src={IconImage} alt="Icon 1" />
         </div>
         <div className="about-phone-text">
-          <p id="about1">Up to date</p>
+          <p >Up to date</p>
           <p id="about2">Official Version</p>
         </div>
       </NavLink>
@@ -28,8 +28,8 @@ const AboutPhone = () => {
             <img src={IconImage1} alt="Icon 1" />
           </div>
           <div className="about-phone-text">
-            <p>Device name</p>
-            <p>OnePlus 7T</p>
+            <p >Device name</p>
+            <p id="about2">OnePlus 7T</p>
           </div>
         </NavLink>
 
@@ -38,8 +38,8 @@ const AboutPhone = () => {
             <img src={IconImage2} alt="Icon 1" />
           </div>
           <div className="about-phone-text">
-            <p>Storage</p>
-            <p>147GB used/256GB</p>
+            <p >Storage</p>
+            <p id="about2">147GB used/256GB</p>
           </div>
         </NavLink>
 

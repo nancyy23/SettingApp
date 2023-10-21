@@ -6,9 +6,10 @@ const Storage = () => {
 
   return (
     <div className="storage-container">
+   
       <div className="header">
-        <div className="back-arrow">&#8592;</div>
-        <h2>Storage</h2>
+      <NavLink to="../about" className="arrow-icon link-no-underline">&#8592;</NavLink>
+        <h1>Storage</h1>
       </div>
       <div className="usage-container">
         <div className="usage-bar">

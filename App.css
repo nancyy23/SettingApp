@@ -50,14 +50,14 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  margin: 10px;
+  width: 100%;
 }
 
 .link img{
   width: 38px;
   height: 38px; 
-  margin-right: 10px; 
-  margin-left: 8px;
+  margin-right: 8px; 
+  margin-left: -4px;
 }
 
 .line {
@@ -81,11 +81,7 @@
   padding: 2px;
 }
 
-/* about */
-/* CSS to remove underline from NavLink components */
-.NavLink {
-  text-decoration: none;
-}
+/* ----------------------about ---------------------------*/
 
 .container{
   padding: 0 20px;
@@ -113,12 +109,14 @@
   border-radius: 20px;
   padding: 20px;
   align-items: center;
+  text-decoration: none;
 }
 
 
 .about-phone-content {
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 
 .about-phone-icon img {
@@ -127,14 +125,9 @@
   margin-right: 20px;
 }
 
-p {
-  margin : 0px; 
-  font-size: 13px;
-}
 
 #about2{
   color: grey;
- 
 }
 
 .about-phone-container2{
@@ -160,20 +153,17 @@ p {
   margin-right: 10px;
 }
 
-.about-phone-text {
-  flex: 1; 
-}
-
 .about-phone-text p {
   margin: 0;
   font-size: 13px;
+  color: #000;
 }
 
 #setting-id{
   justify-content:space-between;
 }
 
-/* airplane */
+/*--------------------- airplane-------------------------------- */
 
 .airplane-container {
   justify-content: space-between;
@@ -249,7 +239,7 @@ input:checked + .slider:before {
   -ms-transform: translateX(26px);
   transform: translateX(22px);
 }
-/* Device */
+/* ---------------------------Device ---------------------------*/
 
 .device-container {
     padding: 0 20px;
@@ -322,7 +312,7 @@ input:checked + .slider:before {
 .usage-fill {
   background-color: #007bff;
   height: 100%;
-  width: 60%; /* Adjust the width based on your percentage */
+  width: 60%; 
 }
 
 .usage-text {
@@ -455,4 +445,120 @@ input:checked + .slider:before {
   font-size: 11px;
   color: grey;
   margin:10px
+}
+
+/* ------------------------------Display------------------- */
+
+.mode-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.mode-button {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.mode-toggle {
+  border: 1px solid grey; 
+  background-color: white;
+  color: blue;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px; 
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.mode-toggle.active {
+  border: 1px solid blue; 
+  background-color: blue;
+  color: white; 
+}
+
+.bright{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.auto-link {
+  text-decoration: none; 
+  color: #000;
+}
+
+.auto-brightness-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top:20px;
+  margin-bottom: 20px;
+}
+
+.color-mode-link {
+  text-decoration: none;
+  color: black;
+}
+
+.setting-link {
+  text-decoration: none; 
+  color: black; 
+}
+
+#grey-text1{
+  margin: 20px 0 10px 10px;
+  font-size: 12px;
+}
+
+.displays-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.displays-links a {
+  text-decoration: none;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #fff;
+  color: #000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.display-link {
+  display: flex;
+  align-items: center;
+}
+
+/*---------------------------- sound ------------------*/
+
+.displays-links {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.display-link {
+  text-decoration: none;
+}
+.volume {
+  font-size: 14px;
+}
+
+.row-length-range {
+  margin: 10px 0;
+}
+
+.vibration-intensity {
+  font-size: 14px;
+}
+
+.toggle-switch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.toggle-label{
+  margin:10px;
+  font-size: 14px;
 }

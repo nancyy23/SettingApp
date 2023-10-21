@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { NavLink } from 'react-router-dom';
 const Device = () => {
   const [deviceName, setDeviceName] = useState('OnePlus 7T'); // Initialize with default text
 
@@ -15,6 +15,10 @@ const Device = () => {
 
   return (
     <div className="device-container">
+      <div className="header">
+      <NavLink to="../about" className="arrow-icon link-no-underline">&#8592;</NavLink>
+        <h1>Device</h1>
+      </div>
       <h4 className="centered-text">Change Device Name</h4>
       <p>Your device name will be displayed when using Bluetooth and Wi-Fi Direct</p>
       <form>
