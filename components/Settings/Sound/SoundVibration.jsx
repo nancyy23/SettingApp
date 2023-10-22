@@ -39,15 +39,16 @@ const SoundVibration = () => {
       </div>
       <div className="setting">
         <div className="displays-links">
-          <NavLink to="/sound1" className="display-link" id="setting-id">
+          <NavLink to="/Live" className="display-link" id="setting-id">
             Live Caption
           </NavLink>
-          <NavLink to="/sound2" className="display-link" id="setting-id">
+          <NavLink to="/Do" className="display-link" id="setting-id">
             Do not Disturb
           </NavLink>
         </div>
 
         <hr className="line" />
+
 
         <p className="volume">Media</p>
         <div className="row-length-range">
@@ -111,14 +112,20 @@ const SoundVibration = () => {
           </label>
         </div>
 
+        <hr className="line" />
+
+        <p className="grey-text" id="grey-text1">
+            RINGTONES
+          </p>
+
         <div className="displays-links">
-          <NavLink to="/sound1" className="display-link" id="setting-id">
+          <NavLink to="/Ringtone" className="display-link" id="setting-id">
             Ringtone
           </NavLink>
-          <NavLink to="/sound2" className="display-link" id="setting-id">
+          <NavLink to="/Message" className="display-link" id="setting-id">
             Message tone
           </NavLink>
-          <NavLink to="/sound3" className="display-link" id="setting-id">
+          <NavLink to="/Notification" className="display-link" id="setting-id">
             Notification sound
           </NavLink>
 
@@ -136,20 +143,20 @@ const SoundVibration = () => {
             </label>
           </div>
 
-          <NavLink to="/vibration1" className="display-link" id="setting-id">
+          <NavLink to="/Vibration" className="display-link" id="setting-id">
             Vibration Intensity
           </NavLink>
 
-          <NavLink to="/vibration3" className="display-link" id="setting-id">
+          <NavLink to="/Haptic" className="display-link" id="setting-id">
             Haptic and tones
           </NavLink>
 
           <hr className="line" />
 
-          <NavLink to="/vibration3" className="display-link" id="setting-id">
+          <NavLink to="/Dolby" className="display-link" id="setting-id">
             Dolby Atoms
           </NavLink>
-          <NavLink to="/moreSound" className="display-link" id="setting-id">
+          <NavLink to="/Advanced" className="display-link" id="setting-id">
             Advanced settings
           </NavLink>
         </div>

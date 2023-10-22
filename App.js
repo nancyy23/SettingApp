@@ -21,7 +21,20 @@ import  Wallpapers from './components/Settings/Display/Wallpapers';
 import  Refresh from './components/Settings/Display/Refresh';
 
 import SoundVibration from './components/Settings/Sound/SoundVibration';
+import Advanced from './components/Settings/Sound/Advanced';
+import Do from './components/Settings/Sound/Do';
+import Dolby from './components/Settings/Sound/Dolby';
+import Haptic from './components/Settings/Sound/Haptic';
+import Live from './components/Settings/Sound/Live';
+import Message from './components/Settings/Sound/Message';
+import Notification from './components/Settings/Sound/Notification';
+import Ringtone from './components/Settings/Sound/Ringtone';
+import Vibration from './components/Settings/Sound/Vibration';
+import Default from './components/Settings/Sound/Default';
+import Volume from './components/Settings/Sound/Volume';
+
 import UrlDisplay from './components/Settings/UrlDisplay/UrlDisplay';
+
 
 
 function App() {
@@ -50,7 +63,18 @@ function App() {
         <Route path = '/Refresh' Component={Refresh}/>
 
         <Route path = '/sound' Component={SoundVibration}/>
-        
+        <Route path = '/Advanced' Component={Advanced}/>
+        <Route path = '/Do' Component={Do}/>
+        <Route path = '/Dolby' Component={Dolby}/>
+        <Route path = '/Haptic' Component={Haptic}/>
+        <Route path = '/Live' Component={Live}/>
+        <Route path = '/Message' Component={Message}/>
+        <Route path = '/Notification' Component={Notification}/>
+        <Route path = '/Ringtone' Component={Ringtone}/>
+        <Route path = '/Vibration' Component={Vibration}/>
+        <Route path = '/Default' Component={Default}/>
+        <Route path = '/Volume' Component={Volume}/>
+
         <Route path = '/UrlDisplay' Component={UrlDisplay}/>
       </Routes>
   );

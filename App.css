@@ -568,7 +568,7 @@ input:checked + .slider:before {
   flex-direction: column;
   justify-content: space-between;
   font-family: Arial, sans-serif;
-
+  padding-left: 10px;
 }
 
 .toggle-row {
@@ -589,6 +589,7 @@ input:checked + .slider:before {
   margin-right: 10px; /* Add space between the text and the switch */
   display: flex;
   align-items: center;
+  padding-bottom: 10px;
 }
 
 .checkmark {
@@ -608,18 +609,53 @@ input[type="checkbox"] {
 }
 
 /* wallpaper */
-
-/* CSS for Thumbnail Images (small size) */
 .thumbnail-image {
-  /* Add styles for thumbnail images here */
-  max-width: 100px; /* Example: Limit the maximum width for thumbnails */
+  max-width: 100px; 
 }
 
-/* CSS for Full-Size Images (large size) */
 .full-size-image {
-  max-width: 100%; /* Allow the image to expand to its original size */
-  height: auto; /* Maintain the image's aspect ratio */
-  display: block; /* Ensure the image is visible */
-  margin: 0 auto; /* Center the image horizontally (optional) */
+  max-width: 100%; 
+  height: auto; 
+  display: block;
+  margin: 0 auto; 
 }
 
+/* Do */
+
+.toggle-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0; 
+}
+
+
+.toggle-switch {
+  display: flex;
+  align-items: center;
+}
+
+/* Dolby */
+
+
+
+.toggle-left {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.toggle-icon {
+  width: 35px; 
+  height: 35px; 
+  margin-right: 10px;
+}
+
+.toggle-text {
+  font-size: 16px; /* Adjust the font size as needed */
+}
+
+.toggle-right {
+  display: flex;
+  align-items: center;
+}
