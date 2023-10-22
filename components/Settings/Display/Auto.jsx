@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from "react-router-dom";
 
 function Auto() {
   const [isAuto, setIsAuto] = useState(false);
@@ -9,9 +10,16 @@ function Auto() {
 
   return (
     <div>
+      <div className="container">
+      <div className="header">
+        <NavLink to="../Display" className="arrow-icon link-no-underline">
+          &#8592;
+        </NavLink>
+        <h1>Auto Switch</h1>
+      </div>
       <div className="toggle-container">
         <div className="left-side">
-          <p>Auto</p>
+          <p>Auto Switch</p>
         </div>
         <div className="right-side">
           <label className="switch">
@@ -20,6 +28,7 @@ function Auto() {
           </label>
         </div>
       </div>
+    </div>
     </div>
   );
 }

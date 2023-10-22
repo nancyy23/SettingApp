@@ -80,11 +80,10 @@ function DisplayBrightness() {
       </div>
 
       <div className="displays-links">
-        <NavLink to="/content1" className="display-link" id="setting-id">
+        <NavLink to="/Eye" className="display-link" id="setting-id">
           Screen color mode
         </NavLink>
-
-        <NavLink to="/content2" className="display-link" id="setting-id">
+        <NavLink to="/Eye" className="display-link" id="setting-id">
           Eye comfort
         </NavLink>
 
@@ -92,22 +91,22 @@ function DisplayBrightness() {
         <p className="grey-text" id="grey-text1">
           VIDEO ENHANCEMENT ENGINE
         </p>
-        <NavLink to="/content3" className="display-link" id="setting-id">
+        <NavLink to="/Video" className="display-link" id="setting-id">
           Video color enhancer
         </NavLink>
 
         <hr className="line" />
 
-        <NavLink to="/content4" className="display-link" id="setting-id">
+        <NavLink to="/Autoscreen" className="display-link" id="setting-id">
           Auto screen off
         </NavLink>
 
-        <NavLink to="/content5" className="display-link" id="setting-id">
+        <NavLink to="/Refresh" className="display-link" id="setting-id">
           Screen refresh rate
         </NavLink>
 
-        <NavLink to="/content6" className="display-link" id="setting-id">
-          Screen display
+        <NavLink to="/Wallpapers" className="display-link" id="setting-id">
+          Wallpapers
         </NavLink>
       </div>
     </div>

@@ -3,7 +3,9 @@ import { NavLink } from "react-router-dom";
 
 const SoundVibration = () => {
   const [soundLevel, setSoundLevel] = useState(50);
-  const [vibrationLevel, setVibrationLevel] = useState(50);
+  const [ringtoneLevel, setRingtoneLevel] = useState(50);
+  const [notificationLevel, setNotificationLevel] = useState(50);
+  const [alarmLevel, setAlarmLevel] = useState(50);
   const [mediaMute, setMediaMute] = useState(false); 
   const [notificationsMute, setNotificationsMute] = useState(false);
 
@@ -15,12 +17,16 @@ const SoundVibration = () => {
     setNotificationsMute(!notificationsMute);
   };
 
-  const ringtone = (event) => {
-    setVibrationLevel(event.target.value);
+  const handleRingtoneChange = (event) => {
+    setRingtoneLevel(event.target.value);
   };
 
-  const alarm = (event) => {
-    setVibrationLevel(event.target.value);
+  const handleNotificationChange = (event) => {
+    setNotificationLevel(event.target.value);
+  };
+
+  const handleAlarmChange = (event) => {
+    setAlarmLevel(event.target.value);
   };
 
   return (
@@ -61,8 +67,8 @@ const SoundVibration = () => {
             type="range"
             min="0"
             max="100"
-            value={vibrationLevel}
-            onChange={ringtone}
+            value={ringtoneLevel}
+            onChange={handleRingtoneChange}
             style={{ width: "100%" , height:"3px" }}
           />
         </div>
@@ -73,9 +79,9 @@ const SoundVibration = () => {
             type="range"
             min="0"
             max="100"
-            value={vibrationLevel}
-            onChange={(event) => setVibrationLevel(event.target.value)}
-            style={{ width: "100%" , height:"3px"}}
+            value={notificationLevel}
+            onChange={handleNotificationChange}
+            style={{ width: "100%", height:"3px"}}
           />
         </div>
 
@@ -85,9 +91,9 @@ const SoundVibration = () => {
             type="range"
             min="0"
             max="100"
-            value={vibrationLevel}
-            onChange={alarm}
-            style={{ width: "100%" , height:"3px"}}
+            value={alarmLevel}
+            onChange={handleAlarmChange}
+            style={{ width: "100%", height:"3px"}}
           />
         </div>
 

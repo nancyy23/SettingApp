@@ -13,7 +13,13 @@ import Nfc from './components/Settings/Connection/Nfc';
 import Screencast from './components/Settings/Connection/Screencast';
 import Vpn from './components/Settings/Connection/Vpn';
 import DisplayBrightness from './components/Settings/Display/DisplayBrightness';
-import  Auto from './components/Settings/Display/DisplayBrightness';
+import  Auto from './components/Settings/Display/Auto';
+import  Autoscreen from './components/Settings/Display/Autoscreen';
+import  Eye from './components/Settings/Display/Eye';
+import  Video from './components/Settings/Display/Video';
+import  Wallpapers from './components/Settings/Display/Wallpapers';
+import  Refresh from './components/Settings/Display/Refresh';
+
 import SoundVibration from './components/Settings/Sound/SoundVibration';
 import UrlDisplay from './components/Settings/UrlDisplay/UrlDisplay';
 
@@ -22,18 +28,29 @@ function App() {
   return (
       <Routes>
         <Route path = '/' Component={SettingsPage}/>
+
         <Route path = '/about' Component={AboutPhone}/>
         <Route path = '/Device' Component={Device}/>
         <Route path = '/Storage' Component={Storage}/>
+
         <Route path = '/airplane' Component={AirplaneMode}/>
+
         <Route path = '/connections' Component={Connections}/>
         <Route path = '/Nfc' Component={Nfc}/>
         <Route path = '/Vpn' Component={Vpn}/>
         <Route path = '/Dns' Component={Dns}/>
         <Route path = '/Screencast' Component={Screencast}/>
+
         <Route path = '/display' Component={DisplayBrightness}/>
-        <Route path = '/auto' Component={Auto}/>
+        <Route path = '/Auto' Component={Auto}/>
+        <Route path = '/Autoscreen' Component={Autoscreen}/>
+        <Route path = '/Eye' Component={Eye}/>
+        <Route path = '/Video' Component={Video}/>
+        <Route path = '/Wallpapers' Component={Wallpapers}/>
+        <Route path = '/Refresh' Component={Refresh}/>
+
         <Route path = '/sound' Component={SoundVibration}/>
+        
         <Route path = '/UrlDisplay' Component={UrlDisplay}/>
       </Routes>
   );

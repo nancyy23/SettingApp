@@ -378,7 +378,7 @@ input:checked + .slider:before {
   font-size: 10px;
 }
 
-/* connections */
+/* ------------------------connections --------------------------*/
 
 .toggle-container {
   justify-content: space-between;
@@ -562,3 +562,64 @@ input:checked + .slider:before {
   margin:10px;
   font-size: 14px;
 }
+
+/* Autoscreen */
+.toggle-container1 {
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: Arial, sans-serif;
+
+}
+
+.toggle-row {
+  display: flex;
+
+  align-items: center;
+  margin-bottom: 10px; /* Add space between rows */
+}
+
+.circular-toggle {
+  display: flex;
+  align-items: center;
+  width: 100%; /* Ensure the entire row is clickable */
+}
+
+.label-text {
+  flex: 1;
+  margin-right: 10px; /* Add space between the text and the switch */
+  display: flex;
+  align-items: center;
+}
+
+.checkmark {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #0074d9;
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+.active .checkmark {
+  background-color: #0074d9;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+/* wallpaper */
+
+/* CSS for Thumbnail Images (small size) */
+.thumbnail-image {
+  /* Add styles for thumbnail images here */
+  max-width: 100px; /* Example: Limit the maximum width for thumbnails */
+}
+
+/* CSS for Full-Size Images (large size) */
+.full-size-image {
+  max-width: 100%; /* Allow the image to expand to its original size */
+  height: auto; /* Maintain the image's aspect ratio */
+  display: block; /* Ensure the image is visible */
+  margin: 0 auto; /* Center the image horizontally (optional) */
+}
+
