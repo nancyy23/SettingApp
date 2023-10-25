@@ -1,17 +1,25 @@
-// src/App.js
 import React from 'react';
 import './App.css';
 import SettingsPage from './components/SettingsPage';
 import { Route , Routes} from 'react-router-dom';
+
 import AboutPhone from './components/Settings/About/AboutPhone';
 import Device from './components/Settings/About/Device';
 import Storage from './components/Settings/About/Storage';
+import Award from './components/Settings/About/Award';
+import Legal from './components/Settings/About/Legal';
+import Ram from './components/Settings/About/Ram';
+import Status from './components/Settings/About/Status';
+import Version from './components/Settings/About/Version';
+
 import AirplaneMode from './components/Settings/Airplane/AirplaneMode';
+
 import Connections from './components/Settings/Connection/Connections';
 import Dns from './components/Settings/Connection/Dns';
 import Nfc from './components/Settings/Connection/Nfc';
 import Screencast from './components/Settings/Connection/Screencast';
 import Vpn from './components/Settings/Connection/Vpn';
+
 import DisplayBrightness from './components/Settings/Display/DisplayBrightness';
 import  Auto from './components/Settings/Display/Auto';
 import  Autoscreen from './components/Settings/Display/Autoscreen';
@@ -37,6 +45,8 @@ import UrlDisplay from './components/Settings/UrlDisplay/UrlDisplay';
 
 
 
+
+
 function App() {
   return (
       <Routes>
@@ -45,6 +55,11 @@ function App() {
         <Route path = '/about' Component={AboutPhone}/>
         <Route path = '/Device' Component={Device}/>
         <Route path = '/Storage' Component={Storage}/>
+        <Route path = '/Award' Component={Award}/>
+        <Route path = '/Legal' Component={Legal}/>
+        <Route path = '/Ram' Component={Ram}/>
+        <Route path = '/Status' Component={Status}/>
+        <Route path = '/Version' Component={Version}/>
 
         <Route path = '/airplane' Component={AirplaneMode}/>
 

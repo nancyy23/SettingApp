@@ -608,17 +608,38 @@ input[type="checkbox"] {
   display: none;
 }
 
+
 /* wallpaper */
 .thumbnail-image {
-  max-width: 100px; 
+  max-width: 100px;
+  margin: 10px;
+}
+
+.wallpaper-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  background: rgba(0, 0, 0, 0.7); 
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.thumbnail-image-expanded{
+  max-width: 400px;
 }
 
 .full-size-image {
-  max-width: 100%; 
-  height: auto; 
+  max-width: 400px;
+  max-height: 80vh; 
   display: block;
-  margin: 0 auto; 
+  margin: auto;
 }
+
 
 /* Do */
 
@@ -637,8 +658,6 @@ input[type="checkbox"] {
 
 /* Dolby */
 
-
-
 .toggle-left {
   display: flex;
   align-items: center;
@@ -652,7 +671,7 @@ input[type="checkbox"] {
 }
 
 .toggle-text {
-  font-size: 16px; /* Adjust the font size as needed */
+  font-size: 16px; 
 }
 
 .toggle-right {

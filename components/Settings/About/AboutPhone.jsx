@@ -60,11 +60,11 @@ const AboutPhone = () => {
 
         <hr className="line" />
 
-        <NavLink to="/" className="setting-link" id="setting-id">
+        <NavLink to="/Ram" className="setting-link" id="setting-id">
           RAM <div>8.00GB </div>
         </NavLink>
 
-        <NavLink to="/" className="setting-link" id="setting-id">
+        <NavLink to="/about" className="setting-link" id="setting-id">
           Android Version <div>12</div>
         </NavLink>
 
@@ -72,20 +72,20 @@ const AboutPhone = () => {
           Version
         </NavLink>
 
-        <NavLink to="/" className="setting-link">
+        <NavLink to="/Legal" className="setting-link">
           Legal information
         </NavLink>
 
-        <NavLink to="/" className="setting-link">
+        <NavLink to="/Status" className="setting-link">
           Status
         </NavLink>
 
         <hr className="line" />
          
-        <NavLink to="/" className="setting-link">
-          Award <p>OxygenOs Contributors</p>
+        <NavLink to="/Award" className="setting-link">
+          Award  <p>OxygenOs Contributors</p>
         </NavLink>
-
+       
         </div>
     </div>
   );

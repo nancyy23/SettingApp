@@ -39,9 +39,6 @@ const SoundVibration = () => {
       </div>
       <div className="setting">
         <div className="displays-links">
-          <NavLink to="/Live" className="display-link" id="setting-id">
-            Live Caption
-          </NavLink>
           <NavLink to="/Do" className="display-link" id="setting-id">
             Do not Disturb
           </NavLink>

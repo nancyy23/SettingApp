@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import IconImage2 from "../images/t.jpg";
 
 const Vpn = () => {
   return (
@@ -9,7 +10,7 @@ const Vpn = () => {
         <h1>VPN</h1>
       </div>
     <div className="vpn-container">
-      <img src="vpn-image.png" alt="VPN" className="vpn-image" />
+      <img src={IconImage2} alt="VPN" className="vpn-image" />
       <p className="vpn-text">No VPNs</p>
     </div>
     </div>
