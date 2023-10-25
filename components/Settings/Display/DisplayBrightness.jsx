@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import lightModeImage from "../images/g.jpg"; 
+import lightModeImage from "../images/g.jpg";
 import darkModeImage from "../images/h.jpg";
 
 function DisplayBrightness() {
@@ -8,23 +8,133 @@ function DisplayBrightness() {
   const [autoBrightness, setAutoBrightness] = useState(false);
   const [brightnessLevel, setBrightnessLevel] = useState(50);
 
+  useEffect(() => {
+    // Fetch the initial settings from your backend when the component mounts
+    fetchSettings();
+  }, []);
+
+  // Load settings from localStorage when the component mounts
+  useEffect(() => {
+    const storedSettings = JSON.parse(localStorage.getItem("displaySettings"));
+    if (storedSettings) {
+      setIsLightMode(storedSettings.isLightMode);
+      setAutoBrightness(storedSettings.autoBrightness);
+      setBrightnessLevel(storedSettings.brightnessLevel);
+    }
+  }, []);
+
+  useEffect(() => {
+    // Save settings to localStorage whenever they change
+    const displaySettings = {
+      isLightMode,
+      autoBrightness,
+      brightnessLevel,
+    };
+    localStorage.setItem("displaySettings", JSON.stringify(displaySettings));
+  }, [isLightMode, autoBrightness, brightnessLevel]);
+
+  const fetchSettings = async () => {
+    try {
+      const response = await fetch("http://localhost:4000/api/get-display-settings");
+      if (response.ok) {
+        const data = await response.json();
+        setIsLightMode(data.lightMode);
+        setAutoBrightness(data.autoBrightness);
+        setBrightnessLevel(data.brightnessLevel);
+      }
+    } catch (error) {
+      console.error("Error fetching settings", error);
+    }
+  };
+
   const toggleMode = () => {
     setIsLightMode(!isLightMode);
+    updateDisplayMode();
   };
 
   const toggleAutoBrightness = () => {
     setAutoBrightness(!autoBrightness);
+    if (!autoBrightness) {
+      // Set brightness level to 50 when turning off auto brightness
+      setBrightnessLevel(80);
+    }
+    updateAutoBrightness();
   };
 
   const handleBrightnessChange = (event) => {
-    setBrightnessLevel(event.target.value);
+    const newBrightnessLevel = event.target.value;
+    setBrightnessLevel(newBrightnessLevel);
+    updateBrightnessLevel(newBrightnessLevel);
+  };
+
+  const updateDisplayMode = async () => {
+    try {
+      const response = await fetch("http://localhost:4000/api/update-display-mode", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ lightMode: isLightMode }),
+      });
+
+      if (!response.ok) {
+        console.error("Failed to update display mode");
+      }
+    } catch (error) {
+      console.error("Error while updating display mode", error);
+    }
+  };
+
+  const updateAutoBrightness = async () => {
+    try {
+      const response = await fetch("http://localhost:4000/api/update-auto-brightness", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ autoBrightness: autoBrightness }),
+      });
+
+      if (!response.ok) {
+        console.error("Failed to update auto brightness");
+      }
+    } catch (error) {
+      console.error("Error while updating auto brightness", error);
+    }
+  };
+
+  const updateBrightnessLevel = async (newBrightnessLevel) => {
+    try {
+      const response = await fetch("http://localhost:4000/api/update-brightness-level", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ brightnessLevel: newBrightnessLevel }),
+      });
+
+      if (!response.ok) {
+        console.error("Failed to update brightness level");
+      }
+    } catch (error) {
+      console.error("Error while updating brightness level", error);
+    }
   };
 
   const dependentText = isLightMode ? "On" : "Off";
+  
+  // Define a style object to set brightness based on brightnessLevel
+  const brightnessStyle = {
+    filter: `brightness(${brightnessLevel}%)`,
+  };
+
+  useEffect(() => {
+    document.body.style.filter = `brightness(${brightnessLevel}%)`;
+  }, [brightnessLevel]);
 
   return (
-    <div className="container">
-      <div className="header">
+    <div className="container" style={brightnessStyle}>
+      <div className="header" >
         <NavLink to="../" className="arrow-icon link-no-underline">
           &#8592;
         </NavLink>
@@ -35,26 +145,34 @@ function DisplayBrightness() {
           <div className="mode-button">
             <img src={lightModeImage} alt="Light Mode" />
             <p>Light Mode</p>
-            <button
-              className={`mode-toggle ${isLightMode ? "active" : ""}`}
-              onClick={toggleMode}
-            ></button>
+            <label className="switch">
+              <input
+                type="checkbox"
+                onClick={toggleMode}
+                checked={isLightMode}
+              />
+              <span className="slider round"></span>
+            </label>
           </div>
           <div className="mode-button">
             <img src={darkModeImage} alt="Dark Mode" />
             <p>Dark Mode</p>
-            <button
-              className={`mode-toggle ${!isLightMode ? "active" : ""}`}
-              onClick={toggleMode}
-            ></button>
+            <label className="switch">
+              <input
+                type="checkbox"
+                onClick={toggleMode}
+                checked={!isLightMode}
+              />
+              <span className="slider round"></span>
+            </label>
           </div>
         </div>
-        <NavLink to="/auto" className="auto-link" id="auto-id">
+        <NavLink to="/auto" className="auto-link" id="auto-id" >
           Auto Switch
         </NavLink>
         <p>{dependentText}</p>
         <hr className="line" />
-        <p class="bright">BRIGHTNESS</p>
+        <p className="bright">BRIGHTNESS</p>
         <div className="row-length-range">
           <input
             type="range"
@@ -62,7 +180,7 @@ function DisplayBrightness() {
             max="100"
             value={brightnessLevel}
             onChange={handleBrightnessChange}
-            style={{ width: "100%",height:"3px" }}
+            style={{ width: "100%", height: "3px" }}
           />
         </div>
         <div className="auto-brightness-toggle">
@@ -109,6 +227,8 @@ function DisplayBrightness() {
           Wallpapers
         </NavLink>
       </div>
+   
+
     </div>
   );
 }

@@ -1,4 +1,6 @@
 import React from 'react';
+import { useState } from 'react';
+
 import './App.css';
 import SettingsPage from './components/SettingsPage';
 import { Route , Routes} from 'react-router-dom';
@@ -48,7 +50,13 @@ import UrlDisplay from './components/Settings/UrlDisplay/UrlDisplay';
 
 
 function App() {
+  const [brightnessLevel, setBrightnessLevel] = useState(100);
+
+  const brightnessStyle = {
+    filter: `brightness(${brightnessLevel}%)`,
+  };
   return (
+    <div style={brightnessStyle}>
       <Routes>
         <Route path = '/' Component={SettingsPage}/>
 
@@ -92,6 +100,7 @@ function App() {
 
         <Route path = '/UrlDisplay' Component={UrlDisplay}/>
       </Routes>
+      </div>
   );
 }
 
