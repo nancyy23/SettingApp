@@ -30,7 +30,7 @@ const ToggleDemo = () => {
   return (
     <div className="container">
     <div className="header">
-      <NavLink to="../Sound" className="arrow-icon link-no-underline">&#8592;</NavLink>
+      <NavLink to="../Advanced" className="arrow-icon link-no-underline">&#8592;</NavLink>
       <h1>Default Recorder</h1> 
     </div>
 

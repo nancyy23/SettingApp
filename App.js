@@ -45,9 +45,6 @@ import UrlDisplay from './components/Settings/UrlDisplay/UrlDisplay';
 import Uptodate from './components/Settings/About/Uptodate';
 
 
-
-
-
 function App() {
   const [brightnessLevel, setBrightnessLevel] = useState(100);
 
@@ -55,7 +52,7 @@ function App() {
     filter: `brightness(${brightnessLevel}%)`,
   };
   return (
-    <div style={brightnessStyle}>
+    <div style={brightnessStyle} >
       <Routes>
         <Route path = '/' Component={SettingsPage}/>
 

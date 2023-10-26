@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 const Haptic = () => {
@@ -43,6 +43,74 @@ const Haptic = () => {
     setToggle7(!toggle7);
   };
 
+  useEffect(() => {
+    // Retrieve state from local storage on component mount
+    const savedState = JSON.parse(localStorage.getItem("hapticSettings"));
+    if (savedState) {
+      setHapticIntensity(savedState.hapticIntensity);
+      setToggle1(savedState.toggle1);
+      setToggle2(savedState.toggle2);
+      setToggle3(savedState.toggle3);
+      setToggle4(savedState.toggle4);
+      setToggle5(savedState.toggle5);
+      setToggle6(savedState.toggle6);
+      setToggle7(savedState.toggle7);
+    }
+  }, []);
+
+  useEffect(() => {
+    // Save the state to local storage whenever it changes
+    const stateToSave = JSON.stringify({
+      hapticIntensity,
+      toggle1,
+      toggle2,
+      toggle3,
+      toggle4,
+      toggle5,
+      toggle6,
+      toggle7,
+    });
+    localStorage.setItem("hapticSettings", stateToSave);
+    saveSettings();
+  }, [
+    hapticIntensity,
+    toggle1,
+    toggle2,
+    toggle3,
+    toggle4,
+    toggle5,
+    toggle6,
+    toggle7,
+  ]);
+
+  const saveSettings = async () => {
+    try {
+      const response = await fetch("http://localhost:4000/api/appsetting", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          hapticIntensity,
+          toggle1,
+          toggle2,
+          toggle3,
+          toggle4,
+          toggle5,
+          toggle6,
+          toggle7,
+        }),
+      });
+      if (response.ok) {
+        console.log("Settings saved successfully");
+      } else {
+        console.error("Failed to save settings");
+      }
+    } catch (error) {
+      console.error("Error while saving settings", error);
+    }
+  };
+
   return (
     <div className="container">
       <div className="header">
@@ -67,10 +135,10 @@ const Haptic = () => {
         max="100"
         value={hapticIntensity}
         onChange={handleHapticChange}
-        style={{ width: "100%", height: "3px"}}
+        style={{ width: "100%", height: "3px" }}
       />
 
-      <hr className="line" style={{margin:"30px 0"}} />
+      <hr className="line" style={{ margin: "30px 0" }} />
 
       <p className="grey-text" id="grey-text1">
         SOUNDS

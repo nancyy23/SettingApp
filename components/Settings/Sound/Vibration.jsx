@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 const Vibration = () => {
@@ -12,6 +12,40 @@ const Vibration = () => {
   const handleHapticChange = (event) => {
     setHapticIntensity(event.target.value);
   };
+
+  const fetchVibrationSettings = async () => {
+    try {
+      const storedData = localStorage.getItem("vibrationSettings");
+      if (storedData) {
+        const data = JSON.parse(storedData);
+        setVibrationIntensity(data.vibrationIntensity);
+        setHapticIntensity(data.hapticIntensity);
+      }
+    } catch (error) {
+      console.error('Error while fetching Vibration settings', error);
+    }
+  };
+
+  const saveVibrationSettings = () => {
+    try {
+      const data = {
+        vibrationIntensity,
+        hapticIntensity,
+      };
+      localStorage.setItem("vibrationSettings", JSON.stringify(data));
+      console.log('Vibration settings saved successfully');
+    } catch (error) {
+      console.error('Error while saving Vibration settings', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchVibrationSettings(); 
+  }, []);
+
+  useEffect(() => {
+    saveVibrationSettings(); 
+  }, [vibrationIntensity, hapticIntensity]);
 
   return (
     <div>

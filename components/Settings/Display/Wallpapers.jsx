@@ -46,7 +46,7 @@ const Wallpapers = () => {
   };
 
   return (
-    <div className="container" style={{ backgroundImage: 'url(your-background-image.jpg)' }}>
+    <div className="container" >
       <div className="header">
         <NavLink to="../Display" className="arrow-icon link-no-underline">
           &#8592;
@@ -64,8 +64,9 @@ const Wallpapers = () => {
           />
         ))}
       </div>
+      
       {selectedImage && (
-        <div className="wallpaper-modal">
+        <div className="wallpaper-modal" style={{ maxWidth: '400px', margin: '0 auto' }}>
           <img
             src={selectedImage}
             alt=""

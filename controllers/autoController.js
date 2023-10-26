@@ -3,7 +3,6 @@ const AutoMode = require('../models/autoModel');
 const postAutoSetting = async (req, res) => {
   const { enabled } = req.body;
 
-  // Update the auto switch status in the database
   isAutoEnabled = enabled;
   const doc = await AutoMode.findOneAndUpdate({}, { enabled }, { new: true, upsert: true });
 

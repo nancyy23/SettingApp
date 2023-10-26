@@ -7,3 +7,4 @@ router.post('/api/appsetting', airplaneModeController.postAirplaneMode);
 router.get('/api/appsetting', airplaneModeController.getAirplaneMode);
 
 module.exports = router;
+

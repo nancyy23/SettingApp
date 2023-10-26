@@ -6,10 +6,10 @@ const Advanced = () => {
     <div>
         <div className="container">
       <div className="header">
-        <NavLink to="../" className="arrow-icon link-no-underline">
+        <NavLink to="../sound" className="arrow-icon link-no-underline">
           &#8592;
         </NavLink>
-        <h1>Display & Brightness</h1>
+        <h1>Advance Setting</h1>
       </div>
       <div className="displays-links">
       <NavLink to="/Volume" className="display-link" id="setting-id">

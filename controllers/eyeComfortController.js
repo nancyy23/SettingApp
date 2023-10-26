@@ -1,11 +1,14 @@
-const EyeComfortMode = require('../models/eyeComfortSettings');
+const EyeComfortMode = require("../models/eyeComfortSettings");
 
 const postEyeComfortSetting = async (req, res) => {
   const { enabled } = req.body;
 
-  // Update the eye comfort status in the database
   isEyeComfortEnabled = enabled;
-  const doc = await EyeComfortMode.findOneAndUpdate({}, { enabled }, { new: true, upsert: true });
+  const doc = await EyeComfortMode.findOneAndUpdate(
+    {},
+    { enabled },
+    { new: true, upsert: true }
+  );
 
   res.json({ enabled: doc.enabled });
 };

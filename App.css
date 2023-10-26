@@ -1,3 +1,9 @@
+:root {
+  --bg-color-light: #ffffff; /* Light mode background color */
+  --bg-color-dark: #000000;  /* Dark mode background color */
+}
+
+
 .settings-page {
     padding: 0 20px;
     margin: 20px auto;

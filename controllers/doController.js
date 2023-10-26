@@ -1,28 +1,36 @@
-const Do = require('../models/doModel');
+const DoSettings = require('../models/doSettings');
 
-const getDoSetting = async (req, res) => {
+const updateDoSettings = async (req, res) => {
   try {
-    const doc = await Do.findOne();
-    res.json(doc);
+    const { toggle1, toggle2, toggle3 } = req.body;
+
+    const doSettings = await DoSettings.findOneAndUpdate(
+      {},
+      { toggle1, toggle2, toggle3 },
+      { new: true, upsert: true }
+    );
+
+    return res.json(doSettings);
   } catch (error) {
-    console.error('Error while fetching Do Not Disturb settings', error);
-    res.status(500).json({ error: 'Internal server error' });
+    console.error('Error updating Do Not Disturb settings', error);
+    return res.status(500).json({ error: 'Internal Server Error' });
   }
 };
 
-const updateDoSetting = async (req, res) => {
-  const { toggle1, toggle2, toggle3 } = req.body;
-
+const getDoSettings = async (req, res) => {
   try {
-    const doc = await Do.findOneAndUpdate({}, { toggle1, toggle2, toggle3 }, { new: true, upsert: true });
-    res.json(doc);
+    const doSettings = await DoSettings.findOne({});
+    if (!doSettings) {
+      return res.json({ toggle1: false, toggle2: false, toggle3: false });
+    }
+    return res.json(doSettings);
   } catch (error) {
-    console.error('Error while updating Do Not Disturb settings', error);
-    res.status(500).json({ error: 'Internal server error' });
+    console.error('Error fetching Do Not Disturb settings', error);
+    return res.status(500).json({ error: 'Internal Server Error' });
   }
 };
 
 module.exports = {
-  getDoSetting,
-  updateDoSetting,
+  updateDoSettings,
+  getDoSettings,
 };

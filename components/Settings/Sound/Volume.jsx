@@ -31,7 +31,7 @@ const VolumeToggles = () => {
     <div>
           <div className="container">
       <div className="header">
-        <NavLink to="../Sound" className="arrow-icon link-no-underline">
+        <NavLink to="../Advanced" className="arrow-icon link-no-underline">
           &#8592;
         </NavLink>
         <h1>Volume button function</h1>

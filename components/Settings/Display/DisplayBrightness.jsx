@@ -85,7 +85,7 @@ function DisplayBrightness() {
 
   const updateAutoBrightness = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/update-auto-brightness", {
+      const response = await fetch("http://localhost:4000/api/appsetting", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -103,7 +103,7 @@ function DisplayBrightness() {
 
   const updateBrightnessLevel = async (newBrightnessLevel) => {
     try {
-      const response = await fetch("http://localhost:4000/api/update-brightness-level", {
+      const response = await fetch("http://localhost:4000/api/appsetting", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -121,7 +121,6 @@ function DisplayBrightness() {
 
   const dependentText = isLightMode ? "On" : "Off";
   
-  // Define a style object to set brightness based on brightnessLevel
   const brightnessStyle = {
     filter: `brightness(${brightnessLevel}%)`,
   };
@@ -130,15 +129,21 @@ function DisplayBrightness() {
     document.body.style.filter = `brightness(${brightnessLevel}%)`;
   }, [brightnessLevel]);
 
+  const backgroundStyle = {
+    filter: `brightness(${brightnessLevel}%)`,
+    backgroundColor: isLightMode ? "#ffffff" : "grey",
+  };
+
   return (
-    <div className="container" style={brightnessStyle}>
+    <div className="container" style={{ ...brightnessStyle, ...backgroundStyle }}>
       <div className="header" >
         <NavLink to="../" className="arrow-icon link-no-underline">
           &#8592;
         </NavLink>
         <h1>Display & Brightness</h1>
       </div>
-      <div className="setting">
+     
+      <div className="setting" >
         <div className="mode-buttons">
           <div className="mode-button">
             <img src={lightModeImage} alt="Light Mode" />
@@ -194,12 +199,12 @@ function DisplayBrightness() {
         </div>
         <hr className="line" />
       </div>
-
-      <div className="displays-links">
-        <NavLink to="/Eye" className="display-link" id="setting-id">
+      
+      <div className="displays-links" style={brightnessStyle} >
+        <NavLink to="/Eye" className="display-link" id="setting-id" style={backgroundStyle}>
           Screen color mode
         </NavLink>
-        <NavLink to="/Eye" className="display-link" id="setting-id">
+        <NavLink to="/Eye" className="display-link" id="setting-id" style={backgroundStyle}>
           Eye comfort
         </NavLink>
 
@@ -207,23 +212,21 @@ function DisplayBrightness() {
         <p className="grey-text" id="grey-text1">
           VIDEO ENHANCEMENT ENGINE
         </p>
-        <NavLink to="/Video" className="display-link" id="setting-id">
+        <NavLink to="/Video" className="display-link" id="setting-id" style={backgroundStyle}>
           Video color enhancer
         </NavLink>
 
         <hr className="line" />
 
-        <NavLink to="/Autoscreen" className="display-link" id="setting-id">
+        <NavLink to="/Autoscreen" className="display-link" id="setting-id" style={backgroundStyle}>
           Auto screen off
         </NavLink>
 
-        <NavLink to="/Wallpapers" className="display-link" id="setting-id">
+        <NavLink to="/Wallpapers" className="display-link" id="setting-id" style={backgroundStyle}>
           Wallpapers
         </NavLink>
       </div>
-   
-
-    </div>
+   </div>
   );
 }
 

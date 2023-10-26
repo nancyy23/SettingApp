@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
 function Auto() {
   const [isAuto, setIsAuto] = useState(false);
@@ -15,24 +15,24 @@ function Auto() {
 
   const fetchAutoSetting = async () => {
     try {
-      const response = await fetch('http://localhost:4000/api/auto-setting'); // Replace with your backend URL
+      const response = await fetch("http://localhost:4000/api/appsetting"); 
       if (response.ok) {
         const data = await response.json();
         setIsAuto(data.enabled);
       } else {
-        console.error('Failed to fetch auto switch status');
+        console.error("Failed to fetch auto switch status");
       }
     } catch (error) {
-      console.error('Error while fetching auto switch status', error);
+      console.error("Error while fetching auto switch status", error);
     }
   };
 
   const updateAutoSetting = async (enabled) => {
     try {
-      const response = await fetch('http://localhost:4000/api/auto-setting', {
-        method: 'POST',
+      const response = await fetch("http://localhost:4000/api/appsetting", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ enabled }),
       });
@@ -40,10 +40,10 @@ function Auto() {
         const data = await response.json();
         setIsAuto(data.enabled);
       } else {
-        console.error('Failed to update auto switch status');
+        console.error("Failed to update auto switch status");
       }
     } catch (error) {
-      console.error('Error while updating auto switch status', error);
+      console.error("Error while updating auto switch status", error);
     }
   };
 
@@ -62,7 +62,7 @@ function Auto() {
         <div className="right-side">
           <label className="switch">
             <input type="checkbox" onClick={toggleAuto} checked={isAuto} />
-            <span className={`slider ${isAuto ? 'round' : ''}`}></span>
+            <span className={`slider ${isAuto ? "round" : ""}`}></span>
           </label>
         </div>
       </div>

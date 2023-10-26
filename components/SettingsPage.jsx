@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { NavLink } from "react-router-dom";
 import airplaneIcon from "./Settings/images/a.png";
 import displayIcon from "./Settings/images/b.png";
@@ -7,16 +7,23 @@ import aboutIcon from "./Settings/images/d.png";
 import connectionsIcon from "./Settings/images/e.png";
 import UrlDisplay from "./Settings/UrlDisplay/UrlDisplay";
 
-
-
 function SettingsPage() {
   const name = "M123423561r6";
+  const [searchQuery, setSearchQuery] = useState("");
+  const settings = [
+    { path: "/airplane", icon: airplaneIcon, label: "Airplane Mode" },
+    { path: "/display", icon: displayIcon, label: "Display and Brightness" },
+    { path: "/sound", icon: soundIcon, label: "Sound and Vibration" },
+    { path: "/about", icon: aboutIcon, label: "About Phone" },
+    { path: "/connections", icon: connectionsIcon, label: "Connections" },
+  ];
   return (
     <div className="settings-page">
       <h1>Settings</h1>
 
       <div className="search-bar">
-        <input type="text" placeholder="Search" />
+        <input type="text" placeholder="Search" value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}/>
       </div>
 
       <div className="settings-links">
@@ -28,7 +35,7 @@ function SettingsPage() {
 
         <hr className="line" />
 
-        <NavLink to="/airplane" className="setting-link">
+        {/* <NavLink to="/airplane" className="setting-link">
           <img src={airplaneIcon} alt="Airplane Mode" />
           Airplane Mode
         </NavLink>
@@ -51,7 +58,16 @@ function SettingsPage() {
         <NavLink to="/connections" className="setting-link">
           <img src={connectionsIcon} alt="Connections" />
           Connections
-        </NavLink>
+        </NavLink> */}
+
+        {settings
+          .filter(setting => setting.label.toLowerCase().includes(searchQuery.toLowerCase()))
+          .map((setting, index) => (
+            <NavLink to={setting.path} className="setting-link" key={index}>
+              <img src={setting.icon} alt={setting.label} />
+              {setting.label}
+            </NavLink>
+          ))}
 
       </div>
     </div>

@@ -1,22 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+
 const Device = () => {
-  const [deviceName, setDeviceName] = useState('OnePlus 7T'); // Initialize with default text
+  const [deviceName, setDeviceName] = useState('OnePlus 7T');
+
+  useEffect(() => {
+    const savedDeviceName = localStorage.getItem('deviceName');
+    if (savedDeviceName) {
+      setDeviceName(savedDeviceName);
+    }
+  }, []);
 
   const handleInputChange = (e) => {
     setDeviceName(e.target.value);
   };
 
   const saveDeviceName = () => {
-    // Customize this function to handle the saving of the device name.
-    // For this example, we're just updating the state with the new name.
-    setDeviceName(deviceName);
+    localStorage.setItem('deviceName', deviceName); 
   };
 
   return (
     <div className="device-container">
       <div className="header">
-      <NavLink to="../about" className="arrow-icon link-no-underline">&#8592;</NavLink>
+        <NavLink to="../about" className="arrow-icon link-no-underline">
+          &#8592;
+        </NavLink>
         <h1>Device</h1>
       </div>
       <h4 className="centered-text">Change Device Name</h4>
