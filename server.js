@@ -23,12 +23,18 @@ db.once('open', () => {
 const airplaneModeRoutes = require('./routes/airplaneModeRoutes'); 
 const displayRoutes = require('./routes/displayRoutes'); 
 const autoRoutes = require('./routes/autoRoutes');
+const eyeComfortRoutes = require('./routes/eyeRoutes'); 
+const videoRoutes = require('./routes/videoRoutes');
+const doRoutes = require('./routes/doRoutes');
+const soundSettingsRoutes = require('./routes/soundSettingsRoutes');
 
-
+app.use(soundSettingsRoutes);
 app.use(airplaneModeRoutes); 
 app.use(displayRoutes);
 app.use(autoRoutes);
-
+app.use(eyeComfortRoutes);
+app.use(videoRoutes);
+app.use(doRoutes);
 
 
 app.listen(port, () => {

@@ -1,40 +1,24 @@
-// Import the necessary model
-const EyeComfort = require('../models/eyeComfortSettings');
+const EyeComfortMode = require('../models/eyeComfortSettings');
 
-// Get Eye Comfort setting
-const getEyeComfortSetting = async (req, res) => {
-  try {
-    // Find the Eye Comfort setting in the database (assuming it's stored in a collection)
-    const eyeComfortSetting = await EyeComfort.findOne();
-    
-    if (!eyeComfortSetting) {
-      // If the setting doesn't exist in the database, return a default value
-      res.json({ enabled: false });
-    } else {
-      res.json({ enabled: eyeComfortSetting.enabled });
-    }
-  } catch (error) {
-    console.error('Error while fetching Eye Comfort setting', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
+const postEyeComfortSetting = async (req, res) => {
+  const { enabled } = req.body;
+
+  // Update the eye comfort status in the database
+  isEyeComfortEnabled = enabled;
+  const doc = await EyeComfortMode.findOneAndUpdate({}, { enabled }, { new: true, upsert: true });
+
+  res.json({ enabled: doc.enabled });
 };
 
-// Set Eye Comfort setting
-const setEyeComfortSetting = async (req, res) => {
-  const { enabled } = req.body;
-  
-  try {
-    // Update the Eye Comfort setting in the database or create it if it doesn't exist
-    const eyeComfortSetting = await EyeComfort.findOneAndUpdate({}, { enabled }, { upsert: true, new: true });
-
-    res.json({ enabled: eyeComfortSetting.enabled });
-  } catch (error) {
-    console.error('Error while updating Eye Comfort setting', error);
-    res.status(500).json({ error: 'Internal server error' });
+const getEyeComfortSetting = async (req, res) => {
+  const doc = await EyeComfortMode.findOne();
+  if (doc) {
+    isEyeComfortEnabled = doc.enabled;
   }
+  res.json({ enabled: isEyeComfortEnabled });
 };
 
 module.exports = {
+  postEyeComfortSetting,
   getEyeComfortSetting,
-  setEyeComfortSetting,
 };

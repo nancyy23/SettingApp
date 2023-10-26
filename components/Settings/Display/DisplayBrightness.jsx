@@ -9,11 +9,10 @@ function DisplayBrightness() {
   const [brightnessLevel, setBrightnessLevel] = useState(50);
 
   useEffect(() => {
-    // Fetch the initial settings from your backend when the component mounts
+   //fetch initial state
     fetchSettings();
   }, []);
 
-  // Load settings from localStorage when the component mounts
   useEffect(() => {
     const storedSettings = JSON.parse(localStorage.getItem("displaySettings"));
     if (storedSettings) {
@@ -24,7 +23,6 @@ function DisplayBrightness() {
   }, []);
 
   useEffect(() => {
-    // Save settings to localStorage whenever they change
     const displaySettings = {
       isLightMode,
       autoBrightness,
@@ -55,7 +53,7 @@ function DisplayBrightness() {
   const toggleAutoBrightness = () => {
     setAutoBrightness(!autoBrightness);
     if (!autoBrightness) {
-      // Set brightness level to 50 when turning off auto brightness
+     
       setBrightnessLevel(80);
     }
     updateAutoBrightness();
@@ -217,10 +215,6 @@ function DisplayBrightness() {
 
         <NavLink to="/Autoscreen" className="display-link" id="setting-id">
           Auto screen off
-        </NavLink>
-
-        <NavLink to="/Refresh" className="display-link" id="setting-id">
-          Screen refresh rate
         </NavLink>
 
         <NavLink to="/Wallpapers" className="display-link" id="setting-id">

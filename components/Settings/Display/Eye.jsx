@@ -5,7 +5,6 @@ function EyeComfort() {
   const [isEyeComfortOn, setIsEyeComfortOn] = useState(false);
 
   useEffect(() => {
-    // Fetch the initial eye comfort setting from your backend when the component mounts
     fetchEyeComfortSetting();
   }, []);
 
@@ -57,7 +56,9 @@ function EyeComfort() {
         <h1>Eye Comfort</h1>
       </div>
 
-      <p className="dns-text">Eye comfort reduces blue light from the screen and alleviates eye strain. It is normal for the screen to appear yellowish with Eye Comfort on.</p>
+      <p className="dns-text">
+        Eye comfort reduces blue light from the screen and alleviates eye strain. It is normal for the screen to appear yellowish with Eye Comfort on.
+      </p>
 
       <hr className="line" />
 

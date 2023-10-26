@@ -1,0 +1,9 @@
+const mongoose = require('mongoose');
+
+const videoSchema = new mongoose.Schema({
+  enabled: Boolean,
+});
+
+const VideoSettings = mongoose.model('VideoSettings', videoSchema);
+
+module.exports = VideoSettings;

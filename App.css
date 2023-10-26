@@ -378,6 +378,16 @@ input:checked + .slider:before {
   font-size: 10px;
 }
 
+
+.update-button {
+  background-color: #0074D9;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
 /* ------------------------connections --------------------------*/
 
 .toggle-container {

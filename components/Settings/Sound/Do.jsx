@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Do = () => {
@@ -8,15 +8,64 @@ const Do = () => {
 
   const toggleSwitch1 = () => {
     setToggle1(!isToggle1On);
+    saveSettings();
   };
 
   const toggleSwitch2 = () => {
     setToggle2(!isToggle2On);
+    saveSettings();
   };
 
   const toggleSwitch3 = () => {
     setToggle3(!isToggle3On);
+    saveSettings();
   };
+
+  const saveSettings = async () => {
+    try {
+      const response = await fetch('http://localhost:4000/api/do-setting', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          toggle1: isToggle1On,
+          toggle2: isToggle2On,
+          toggle3: isToggle3On,
+        }),
+      });
+      if (response.ok) {
+        // Settings saved successfully
+        console.log('Settings saved successfully');
+      } else {
+        console.error('Failed to save settings');
+      }
+    } catch (error) {
+      console.error('Error while saving settings', error);
+    }
+  };
+
+  useEffect(() => {
+    // Fetch Do Not Disturb settings on component mount
+    const fetchSettings = async () => {
+      try {
+        const response = await fetch('http://localhost:4000/api/do-setting');
+        if (response.ok) {
+          const data = await response.json();
+          setToggle1(data.toggle1);
+          setToggle2(data.toggle2);
+          setToggle3(data.toggle3);
+        } else {
+          console.error('Failed to fetch Do Not Disturb settings');
+        }
+      } catch (error) {
+        console.error('Error while fetching settings', error);
+      }
+    };
+
+    fetchSettings();
+  }, []);
+
 
   return (
     <div className="container">

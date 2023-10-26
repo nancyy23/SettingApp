@@ -10,8 +10,7 @@ import Device from './components/Settings/About/Device';
 import Storage from './components/Settings/About/Storage';
 import Award from './components/Settings/About/Award';
 import Legal from './components/Settings/About/Legal';
-import Ram from './components/Settings/About/Ram';
-import Status from './components/Settings/About/Status';
+import Status from './components/Settings/About/Uptodate';
 import Version from './components/Settings/About/Version';
 
 import AirplaneMode from './components/Settings/Airplane/AirplaneMode';
@@ -28,7 +27,6 @@ import  Autoscreen from './components/Settings/Display/Autoscreen';
 import  Eye from './components/Settings/Display/Eye';
 import  Video from './components/Settings/Display/Video';
 import  Wallpapers from './components/Settings/Display/Wallpapers';
-import  Refresh from './components/Settings/Display/Refresh';
 
 import SoundVibration from './components/Settings/Sound/SoundVibration';
 import Advanced from './components/Settings/Sound/Advanced';
@@ -44,6 +42,7 @@ import Default from './components/Settings/Sound/Default';
 import Volume from './components/Settings/Sound/Volume';
 
 import UrlDisplay from './components/Settings/UrlDisplay/UrlDisplay';
+import Uptodate from './components/Settings/About/Uptodate';
 
 
 
@@ -65,8 +64,7 @@ function App() {
         <Route path = '/Storage' Component={Storage}/>
         <Route path = '/Award' Component={Award}/>
         <Route path = '/Legal' Component={Legal}/>
-        <Route path = '/Ram' Component={Ram}/>
-        <Route path = '/Status' Component={Status}/>
+        <Route path = '/Uptodate' Component={Uptodate}/>
         <Route path = '/Version' Component={Version}/>
 
         <Route path = '/airplane' Component={AirplaneMode}/>
@@ -83,7 +81,6 @@ function App() {
         <Route path = '/Eye' Component={Eye}/>
         <Route path = '/Video' Component={Video}/>
         <Route path = '/Wallpapers' Component={Wallpapers}/>
-        <Route path = '/Refresh' Component={Refresh}/>
 
         <Route path = '/sound' Component={SoundVibration}/>
         <Route path = '/Advanced' Component={Advanced}/>

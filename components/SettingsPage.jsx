@@ -7,6 +7,8 @@ import aboutIcon from "./Settings/images/d.png";
 import connectionsIcon from "./Settings/images/e.png";
 import UrlDisplay from "./Settings/UrlDisplay/UrlDisplay";
 
+
+
 function SettingsPage() {
   const name = "M123423561r6";
   return (

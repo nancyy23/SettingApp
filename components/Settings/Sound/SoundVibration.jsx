@@ -1,13 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 const SoundVibration = () => {
-  const [soundLevel, setSoundLevel] = useState(50);
-  const [ringtoneLevel, setRingtoneLevel] = useState(50);
-  const [notificationLevel, setNotificationLevel] = useState(50);
-  const [alarmLevel, setAlarmLevel] = useState(50);
-  const [mediaMute, setMediaMute] = useState(false); 
-  const [notificationsMute, setNotificationsMute] = useState(false);
+// Initialize state with default values or values from local storage
+const [soundLevel, setSoundLevel] = useState(() => {
+  const savedSoundLevel = JSON.parse(localStorage.getItem("soundLevel"));
+  return savedSoundLevel || 50;
+});
+const [ringtoneLevel, setRingtoneLevel] = useState(() => {
+  const savedRingtoneLevel = JSON.parse(localStorage.getItem("ringtoneLevel"));
+  return savedRingtoneLevel || 50;
+});
+const [notificationLevel, setNotificationLevel] = useState(() => {
+  const savedNotificationLevel = JSON.parse(localStorage.getItem("notificationLevel"));
+  return savedNotificationLevel || 50;
+});
+const [alarmLevel, setAlarmLevel] = useState(() => {
+  const savedAlarmLevel = JSON.parse(localStorage.getItem("alarmLevel"));
+  return savedAlarmLevel || 50;
+});
+const [mediaMute, setMediaMute] = useState(() => {
+  const savedMediaMute = JSON.parse(localStorage.getItem("mediaMute"));
+  return savedMediaMute || false;
+});
+const [notificationsMute, setNotificationsMute] = useState(() => {
+  const savedNotificationsMute = JSON.parse(localStorage.getItem("notificationsMute"));
+  return savedNotificationsMute || false;
+
+});
 
   const handleMediaToggle = () => {
     setMediaMute(!mediaMute);
@@ -29,6 +49,43 @@ const SoundVibration = () => {
     setAlarmLevel(event.target.value);
   };
 
+  useEffect(() => {
+    localStorage.setItem("soundLevel", JSON.stringify(soundLevel));
+    localStorage.setItem("ringtoneLevel", JSON.stringify(ringtoneLevel));
+    localStorage.setItem("notificationLevel", JSON.stringify(notificationLevel));
+    localStorage.setItem("alarmLevel", JSON.stringify(alarmLevel));
+    localStorage.setItem("mediaMute", JSON.stringify(mediaMute));
+    localStorage.setItem("notificationsMute", JSON.stringify(notificationsMute));
+  }, [soundLevel, ringtoneLevel, notificationLevel, alarmLevel, mediaMute, notificationsMute]);
+
+
+ useEffect (() => {
+  const saveSoundSettings = () => {
+    fetch('http://localhost:4000/api/update-sound-settings', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        soundLevel,
+        ringtoneLevel,
+        notificationLevel,
+        alarmLevel,
+        mediaMute,
+        notificationsMute,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+      })
+      .catch((error) => {
+        console.error('Error updating sound settings', error);
+      });
+  };
+    saveSoundSettings(); 
+
+  }, [soundLevel, ringtoneLevel, notificationLevel, alarmLevel, mediaMute, notificationsMute]);
+  
   return (
     <div className="container">
       <div className="header">

@@ -12,7 +12,7 @@ const AboutPhone = () => {
         <h1>About Device</h1>
       </div>
 
-      <NavLink className="about-phone-section">
+      <NavLink to="/Uptodate"className="about-phone-section">
         <div className="about-phone-icon">
           <img src={IconImage} alt="Icon 1" />
         </div>
@@ -60,7 +60,7 @@ const AboutPhone = () => {
 
         <hr className="line" />
 
-        <NavLink to="/Ram" className="setting-link" id="setting-id">
+        <NavLink to="/about" className="setting-link" id="setting-id">
           RAM <div>8.00GB </div>
         </NavLink>
 
@@ -68,21 +68,17 @@ const AboutPhone = () => {
           Android Version <div>12</div>
         </NavLink>
 
-        <NavLink to="/version" className="setting-link">
-          Version
+        <NavLink to="/version" className="setting-link" id="setting-id" >
+          Version 
         </NavLink>
 
-        <NavLink to="/Legal" className="setting-link">
-          Legal information
-        </NavLink>
-
-        <NavLink to="/Status" className="setting-link">
-          Status
+        <NavLink to="/Legal" className="setting-link" >
+          Legal information 
         </NavLink>
 
         <hr className="line" />
          
-        <NavLink to="/Award" className="setting-link">
+        <NavLink to="/Award" className="setting-link"id="setting-id">
           Award  <p>OxygenOs Contributors</p>
         </NavLink>
        

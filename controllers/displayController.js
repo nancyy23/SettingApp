@@ -5,7 +5,6 @@ const updateDisplayMode = async (req, res) => {
   const { lightMode } = req.body;
 
   try {
-    // Update the display mode in the DisplaySetting model
     const displaySetting = await DisplaySetting.findOne();
     displaySetting.lightMode = lightMode;
     await displaySetting.save();
@@ -21,7 +20,6 @@ const updateAutoBrightness = async (req, res) => {
   const { autoBrightness } = req.body;
 
   try {
-    // Update the auto brightness setting in the DisplaySetting model
     const displaySetting = await DisplaySetting.findOne();
     displaySetting.autoBrightness = autoBrightness;
     await displaySetting.save();
@@ -37,7 +35,6 @@ const updateBrightnessLevel = async (req, res) => {
   const { brightnessLevel } = req.body;
 
   try {
-    // Update the brightness level in the DisplaySetting model
     const displaySetting = await DisplaySetting.findOne();
     displaySetting.brightnessLevel = brightnessLevel;
     await displaySetting.save();
@@ -51,7 +48,6 @@ const updateBrightnessLevel = async (req, res) => {
 
 const getBrightness = async (req, res) => {
   try {
-    // Get the brightness level from the DisplaySetting model
     const displaySetting = await DisplaySetting.findOne();
     const brightnessLevel = displaySetting ? displaySetting.brightnessLevel : 50;
 

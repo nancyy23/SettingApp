@@ -27,33 +27,33 @@ const Storage = () => {
 
       <div className="features">
 
-        <NavLink to="/" className="feature-link">
+        <NavLink to="/storage" className="feature-link">
           <span className="feature-bullet" id ="feature1"></span> Images
           <p className="small-grey-text">6.47GB</p>
         </NavLink>
 
-        <NavLink to="/" className="feature-link">
-          <span className="feature-bullet" id ="feature2"></span> Images
+        <NavLink to="/storage" className="feature-link">
+          <span className="feature-bullet" id ="feature2"></span> Videos
           <p className="small-grey-text">6.47GB</p>
         </NavLink>
 
-        <NavLink to="/" className="feature-link">
-          <span className="feature-bullet"id ="feature3"></span> Images
+        <NavLink to="/storage" className="feature-link">
+          <span className="feature-bullet"id ="feature3"></span> APLs
           <p className="small-grey-text">6.47GB</p>
         </NavLink>
 
-        <NavLink to="/" className="feature-link">
-          <span className="feature-bullet"id ="feature4"></span> Images
+        <NavLink to="/storage" className="feature-link">
+          <span className="feature-bullet"id ="feature4"></span> Apps
           <p className="small-grey-text">6.47GB</p>
         </NavLink>
 
-        <NavLink to="/" className="feature-link">
-          <span className="feature-bullet"id ="feature5"></span> Images
+        <NavLink to="/storage" className="feature-link">
+          <span className="feature-bullet"id ="feature5"></span> Documents
           <p className="small-grey-text">6.47GB</p>
         </NavLink>
 
-        <NavLink to="/" className="feature-link">
-          <span className="feature-bullet"id ="feature6"></span> Images
+        <NavLink to="/storage" className="feature-link">
+          <span className="feature-bullet"id ="feature6"></span> Other
           <p className="small-grey-text">6.47GB</p>
         </NavLink>
 

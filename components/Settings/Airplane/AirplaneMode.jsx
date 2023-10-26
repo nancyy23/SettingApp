@@ -11,7 +11,7 @@ const AirplaneComponent = () => {
 
   const fetchAirplaneMode = async () => {
     try {
-      const response = await fetch('http://localhost:4000/api/appsetting'); // Replace with your backend URL
+      const response = await fetch('http://localhost:4000/api/appsetting');
       if (response.ok) {
         const data = await response.json();
         setAirplaneMode(data.enabled);
