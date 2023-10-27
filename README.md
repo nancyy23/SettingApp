@@ -69,6 +69,7 @@ Loom Video Link
 
 https://www.loom.com/share/3af8a5b1159a445e9302afdbc214d114?sid=c019a373-324c-4a45-8ca3-f69f6d631fe4
 
+![setting img](https://github.com/nancyy23/SettingApp/assets/88728967/f99cee1f-b683-4412-8858-f82ab9d54ba6)
 
 
-![Screenshot (131)](https://github.com/nancyy23/SettingApp/assets/88728967/de6725f7-7b73-4e82-8030-f6ade72dbb22)
+
