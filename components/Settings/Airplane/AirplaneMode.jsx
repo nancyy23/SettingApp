@@ -2,16 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
 const AirplaneComponent = () => {
-  const [isAirplaneVisible, setIsAirplaneVisible] = useState(false);
   const [airplaneMode, setAirplaneMode] = useState(false);
 
-  const toggleAirplaneVisibility = () => {
-    setIsAirplaneVisible(!isAirplaneVisible);
-  };
+  // const toggleAirplaneVisibility = () => {
+  //   setIsAirplaneVisible(!isAirplaneVisible);
+  // };
 
   const fetchAirplaneMode = async () => {
     try {
-      const response = await fetch('http://localhost:4000/api/appsetting');
+      const response = await fetch('http://localhost:4000/api/airplanemodes'); 
       if (response.ok) {
         const data = await response.json();
         setAirplaneMode(data.enabled);
@@ -25,7 +24,7 @@ const AirplaneComponent = () => {
 
   const updateAirplaneMode = async (enabled) => {
     try {
-      const response = await fetch('http://localhost:4000/api/appsetting', {
+      const response = await fetch('http://localhost:4000/api/airplanemodes', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
