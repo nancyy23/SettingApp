@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import airplaneIcon from "./Settings/images/a.png";
 import displayIcon from "./Settings/images/b.png";
@@ -22,12 +22,15 @@ function SettingsPage() {
       <h1>Settings</h1>
 
       <div className="search-bar">
-        <input type="text" placeholder="Search" value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}/>
+        <input
+          type="text"
+          placeholder="Search"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
       </div>
 
       <div className="settings-links">
-        
         <div className="link">
           <img src={require("./Settings/images/f.png")} alt="Your Alt Text" />
           <UrlDisplay name={name} url="https://www.oneplus.in/redcableclub" />
@@ -61,14 +64,15 @@ function SettingsPage() {
         </NavLink> */}
 
         {settings
-          .filter(setting => setting.label.toLowerCase().includes(searchQuery.toLowerCase()))
+          .filter((setting) =>
+            setting.label.toLowerCase().includes(searchQuery.toLowerCase())
+          )
           .map((setting, index) => (
             <NavLink to={setting.path} className="setting-link" key={index}>
               <img src={setting.icon} alt={setting.label} />
               {setting.label}
             </NavLink>
           ))}
-
       </div>
     </div>
   );
